@@ -2,8 +2,13 @@ const express = require("express");
 const quadra = require("./controllers/quadraController");
 const cliente = require("./controllers/clienteController");
 const reserva = require("./controllers/reservaController");
+const userController = require("./controllers/userController");
 
 const router = express.Router();
+
+
+router.post("/register", userController.register);
+router.post("/login", userController.login);
 
 // quadras
 router.get("/quadras", quadra.index);
